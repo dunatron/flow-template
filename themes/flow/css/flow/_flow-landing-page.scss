@@ -1,0 +1,49 @@
+.flow-panels-wrapper {
+  .panel-link {
+    .panel-img {
+      height: 100%;
+      width: 100%;
+      max-height: 300px;
+    }
+  }
+
+  .panel {
+    height: 500px;
+    display: inline-block;
+    float: left;
+    border: none;
+    margin: 0;
+    @include cf;
+    @include show-psuedo;
+  }
+
+  .panel.Full {
+    width: 100%;
+  }
+
+  .panel.Half {
+    width: 50%;
+  }
+
+  .panel.Third {
+    width: 33.33%;
+  }
+
+  .panel.Quarter {
+    width: 25%;
+  }
+
+  .flow-panel-text-wrap {
+    height: 200px;
+  }
+
+  .panel-text {
+    background-color: sandybrown;
+    //width: (100% - $arrow-box-width);
+    width: calc(100% - #{$arrow-box-width});
+  }
+  .panel-arrow {
+    background-color: cornflowerblue;
+    width: $arrow-box-width px;
+  }
+}

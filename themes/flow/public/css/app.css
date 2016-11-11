@@ -6270,3 +6270,44 @@ button.close {
   border-color: gainsboro;
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1); }
+
+.flow-panels-wrapper .panel-link .panel-img {
+  height: 100%;
+  width: 100%;
+  max-height: 300px; }
+
+.flow-panels-wrapper .panel {
+  height: 500px;
+  display: inline-block;
+  float: left;
+  border: none;
+  margin: 0;
+  content: '';
+  display: block; }
+  .flow-panels-wrapper .panel:after {
+    content: '';
+    display: block;
+    clear: both; }
+
+.flow-panels-wrapper .panel.Full {
+  width: 100%; }
+
+.flow-panels-wrapper .panel.Half {
+  width: 50%; }
+
+.flow-panels-wrapper .panel.Third {
+  width: 33.33%; }
+
+.flow-panels-wrapper .panel.Quarter {
+  width: 25%; }
+
+.flow-panels-wrapper .flow-panel-text-wrap {
+  height: 200px; }
+
+.flow-panels-wrapper .panel-text {
+  background-color: sandybrown;
+  width: calc(100% - 60px); }
+
+.flow-panels-wrapper .panel-arrow {
+  background-color: cornflowerblue;
+  width: 60px px; }
