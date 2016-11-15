@@ -2,25 +2,25 @@
 /**
  * Created by PhpStorm.
  * User: admin
- * Date: 11/11/16
- * Time: 3:54 PM
- */class FlowLandingPage extends Page
+ * Date: 15/11/16
+ * Time: 4:44 PM
+ */
+class FlowPage extends Page
 {
 
-    private static $singular_name        = "FlowLandingPage";
-    private static $plural_name          = "FlowLandingPages";
+    private static $singular_name        = "Flow Page";
+    private static $plural_name          = "Flow Pages";
+    private static $description = 'Flow Page with ability to link to other pages in the footer';
     private static $db = array();
     
     static $defaults = array (
 	    'ShowInMenus' => false,
-	    'ShowInSearch' => true
+	    'ShowInSearch' => false
     );
     
     private static $has_one = array();
 
-    private static $has_many = array(
-        'FlowPanels' => 'FlowPanel'
-    );
+    private static $has_many = array();
 
     private static $many_many = array();
 
@@ -49,21 +49,12 @@
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
-        /**
-         * Dynamic FlowPanels (DB Object)
-         */
-        $fields->addFieldToTab('Root.FlowPanels', GridField::create(
-            'FlowPanels',
-            'FlowPanels on the FlowLandingPage',
-            $this->FlowPanels(),
-            GridFieldConfig_RecordEditor::create()
-        ));
         
         return $fields;
     }
     
 }
-class FlowLandingPage_Controller extends Page_Controller
+class FlowPage_Controller extends Page_Controller
 {
 
     /**

@@ -2,8 +2,9 @@
     <% loop $FlowPanels %>
         <a href="$PanelUrlLink" class="panel-link">
             <div class="panel $PanelType" style="background-color: $HashColor;">
-                <% with $PanelImage.SetWidth(800) %>
+                <% with $PanelImage.CroppedImage(1000, 600) %>
                     <div class="panel-img" style="background-image: url('$URL'); width:$Width; height: $Height;"></div>
+                    <%--<img class="panel-img" src="$URL" width="$Width;" height="$Height;">--%>
                 <% end_with %>
                 <div class="flow-panel-text-wrap $ColorClass" style="background-color: $HashColor;">
                     <div class="panel-text">$PanelText</div>

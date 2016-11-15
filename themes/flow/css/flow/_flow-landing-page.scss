@@ -4,17 +4,28 @@
       height: 100%;
       width: 100%;
       max-height: 300px;
+      background-position: center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+      -o-background-size: cover;
     }
   }
 
   .panel {
     height: 500px;
-    display: inline-block;
+    //display: inline-block;
     float: left;
     border: none;
     margin: 0;
     @include cf;
     @include show-psuedo;
+    &:hover {
+      .panel-arrow:before {
+        left: 30px;
+        transition: left $transition_speed;
+      }
+    }
   }
 
   .panel.Full {
@@ -22,15 +33,36 @@
   }
 
   .panel.Half {
-    width: 50%;
+    width: 100%;
+    @media #{$min768} {
+      width: 100%;
+    }
+    @media #{$min992} {
+      width: 50%;
+    }
   }
 
   .panel.Third {
-    width: 33.33%;
+    width: 100%;
+    @media #{$min768} {
+      width: 33.33%;
+    }
+    @media #{$min992} {
+      width: 33.33%;
+    }
   }
 
   .panel.Quarter {
-    width: 25%;
+    width: 100%;
+    @media #{$min525} {
+      width: 50%;
+    }
+    @media #{$min768} {
+      width: 50%;
+    }
+    @media #{$min992} {
+      width: 25%;
+    }
   }
 
   .flow-panel-text-wrap {
@@ -38,12 +70,34 @@
   }
 
   .panel-text {
-    background-color: sandybrown;
-    //width: (100% - $arrow-box-width);
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
     width: calc(100% - #{$arrow-box-width});
+    max-height: 100%;
+    overflow: scroll;
+    padding: 15px;
   }
   .panel-arrow {
-    background-color: cornflowerblue;
-    width: $arrow-box-width px;
+    position: relative;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    width: $arrow-box-width;
   }
+
+  .panel-arrow:before {
+    @include show_psuedo;
+    top: 50%;
+    margin-top: -15px;
+    border-top: 1px solid #FFF;
+    border-right: 1px solid #FFF;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 15px;
+    transition: left $transition_speed;
+  }
+
 }
