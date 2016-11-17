@@ -11,3 +11,99 @@
     clear: both;
   }
 }
+
+// Flow Banner used on (flow-page, flow-holder)
+@mixin flow_banner {
+  .flow-banner {
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    height: 500px;
+    box-sizing: border-box;
+  }
+
+  .flow-banner-text {
+    float: left;
+    width: 100%;
+    color: #FFF;
+    display: block;
+    position: relative;
+    bottom:0;
+    padding: 30px 30px 30px;
+    box-sizing: border-box;
+    font-size: 42px;
+    @media #{$min780} {
+      font-size: 64px;
+      width: 40%;
+      display: inline-block;
+      position: absolute;
+    }
+    h1 {
+      font-size: 1em;
+    }
+  }
+
+  .flow-banner-img {
+    float: right;
+    width: 100%;
+    margin-left: 0;
+    height: 360px;
+    display: block;
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @media #{$min780} {
+      width: 60%;
+      height: 100%;
+      margin-left: 40%;
+      display: inline-block;
+    }
+  }
+
+  .flow-title-noImage {
+    padding: 30px;
+    h1 {
+      color: #FFF;
+    }
+  }
+}
+
+
+@mixin panel_and_arrow {
+  .panel-text {
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    width: calc(100% - #{$arrow-box-width});
+    max-height: 100%;
+    overflow: scroll;
+    padding: 15px;
+    @media #{$min960} {
+      padding: 30px;
+    }
+  }
+  .panel-arrow {
+    position: relative;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    width: $arrow-box-width;
+  }
+
+  .panel-arrow:before {
+    @include show_psuedo;
+    top: 50%;
+    margin-top: -15px;
+    border-top: 1px solid #FFF;
+    border-right: 1px solid #FFF;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 15px;
+    transition: left $transition_speed;
+  }
+}

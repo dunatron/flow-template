@@ -4,7 +4,8 @@ var sass = require('gulp-sass');
 var config = {
     bootstrapDir: './bower_components/bootstrap-sass',
     publicDir: './public',
-    flowDir: '../../joy-flow-panels/assets'
+    flowPanelDir: '../../joy-flow-panels/assets',
+    flowPageDir: '../../joy-flow-page/assets'
 };
 
 gulp.task('css', function() {
@@ -16,12 +17,21 @@ gulp.task('css', function() {
 });
 
 // Publish CSS To joy-flow-panels module
-gulp.task('flow', function() {
+gulp.task('flowPanel', function() {
     return gulp.src('./css/app.scss')
         .pipe(sass({
             includePaths: [config.bootstrapDir + '/assets/stylesheets'],
         }))
-        .pipe(gulp.dest(config.flowDir + '/css'));
+        .pipe(gulp.dest(config.flowPanelDir + '/css'));
+});
+
+// Publish flow-page.scss To joy-flow-page module
+gulp.task('flowPage', function() {
+    return gulp.src('./css/flow-page.scss')
+        .pipe(sass({
+            includePaths: [config.bootstrapDir + '/assets/stylesheets'],
+        }))
+        .pipe(gulp.dest(config.flowPageDir + '/css'));
 });
 
 gulp.task('fonts', function() {
@@ -29,4 +39,4 @@ gulp.task('fonts', function() {
         .pipe(gulp.dest(config.publicDir + '/fonts'));
 });
 
-gulp.task('default', ['css', 'fonts', 'flow']);
+gulp.task('default', ['css', 'fonts', 'flowPanel', 'flowPage']);

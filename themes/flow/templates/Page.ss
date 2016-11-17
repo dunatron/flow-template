@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css" href="$ThemeDir/public/css/app.css"/>
+    <link rel="stylesheet" type="text/css" href="/joy-flow-page/assets/css/flow-page.css"/>
 
 </head>
 <body class="$ClassName">

@@ -1,0 +1,89 @@
+.flow-page-wrapper {
+  @include flow_banner;
+
+  .flow-breadcrumbs {
+    padding: 0;
+    font-size: 22px;
+  }
+
+  .flow-divider {
+    width: 60px;
+    margin: 40px 0 40px 0;
+    border-top: 1px solid #4792ce;
+  }
+
+  .flow-content {
+    padding: 30px;
+    max-width: 1000px;
+  }
+
+  .next-footer-link {
+    text-decoration: none;
+  }
+
+  .flow-footer {
+    color: #FFF;
+    margin-top: 60px;
+    padding: 45px 30px;
+
+    .panel-text {
+      display: inline-block;
+    }
+
+    .panel-arrow {
+      display: inline-block;
+      padding: 0 0 0 30px;
+    }
+
+    .next {
+      padding: 0 0 10px 0;
+      margin: 0;
+      display: inline-block;
+    }
+    .next-title {
+      padding: 0;
+      margin: 0;
+      display: block;
+
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      padding-left: 15px;
+      size: 0.2em;
+      position: relative;
+      height: 100%;
+      -webkit-transition: right 2s; /* Safari */
+      transition: right 2s;
+      list-style: none;
+    }
+
+    li:before {
+      @include show_psuedo;
+      top: 50%;
+      margin-top: -35px;
+      border-top: 1px solid #FFF;
+      border-right: 1px solid #FFF;
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      transform: rotate(45deg);
+      transition: $transition_speed;
+      right: 15px;
+    }
+
+    li:hover::before {
+      right: 0;
+    }
+
+    &:hover {
+      li:before {
+        right: 0;
+      }
+    }
+  }
+}

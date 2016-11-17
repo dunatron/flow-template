@@ -1,0 +1,26 @@
+.flow-holder-strip {
+  box-sizing: border-box;
+  width: 100%;
+  height: 200px;
+  @media #{$min780} {
+    width: 50%;
+    float: left;
+  }
+
+  &:hover {
+    .panel-arrow:before {
+      left: 30px;
+      transition: left $transition_speed;
+    }
+  }
+  @include panel_and_arrow;
+
+  .flow-strip-title {
+    margin: 0 0 20px 0;
+    color: #FFF;
+  }
+  .flow-strip-text {
+    font-size: 18px;
+    color: #FFF;
+  }
+}
